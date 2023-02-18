@@ -3,6 +3,13 @@ $(document).ready(function(){
   $('#input').keyup(function(){
     var text = $('#input').val();
     
+    // Words
+    var wordCounter = 0;
+    if (text.match(/[\s\n][^\s\n]/g) !== null){
+      wordCounter = text.match(/[\s\n][^\s\n]/g).length;
+    }
+    $('#wordcounter').text(wordCounter+1);
+
     // Characters
     $('#charcounter').text(text.length);
 
@@ -16,18 +23,30 @@ $(document).ready(function(){
     $('#charcounternospace').text(text.length-spaceCounter);
 
     // Sentences
-    var sentenceCounter = 0;
-    if (text.match(/[.!?](\s|\n)/g) !== null){
-      sentenceCounter = text.match(/[.!?](\s|\n)/g).length;
+    var newlineCounter = 0;
+    var signCounter = 0;
+    if (text.match(/\n./g) !== null){
+      newlineCounter = text.match(/\n./g).length;
     }
-    $('#sentencecounter').text(sentenceCounter);
+    if (text.match(/[\.\?!]\s/g) !== null){
+      signCounter = text.match(/[\.\?!]\s/g).length;
+    }
+    if (text){
+      $('#sentencecounter').text(newlineCounter+signCounter+1);
+    }else{
+      $('#sentencecounter').text(0);
+    }
 
     // Paragraphs
     var paragraphCounter = 0;
-    if (text.match(/[\r\n]+/g) !== null){
-      paragraphCounter = text.match(/[\r\n]+/g).length;
+    if (text.match(/[\r\n]./g) !== null){
+      paragraphCounter = text.match(/[\r\n]./g).length;
     }
-    $('#paragraphcounter').text(paragraphCounter);
+    if (text){
+      $('#paragraphcounter').text(paragraphCounter+1);
+    }else{
+      $('#paragraphcounter').text(0);
+    }
   });
   
 });
