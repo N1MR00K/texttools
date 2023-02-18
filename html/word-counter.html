@@ -22,11 +22,34 @@
             </ul>
         </header>
         <main class="w-75 align-self-center">
-            <section>
+            <section class="mb-4">
                 <textarea name="input" id="input" rows="10" class="form-control bg-light"></textarea>
             </section>
-            <section class="my-3">
-
+            <section class="d-flex justify-content-around text-center bg-light rounded p-3">
+                <div class="p-1 col">
+                    <div id="wordcounter" class="h3">0</div>
+                    <div class="text-muted">Words</div>
+                </div>
+                <div class="border"></div>
+                <div class="p-1 col">
+                    <div id="charcounter" class="h3">0</div>
+                    <div class="text-muted">Characters</div>
+                </div>
+                <div class="border"></div>
+                <div class="p-1 col">
+                    <div id="charcounternospace" class="h3">0</div>
+                    <div class="text-muted">Characters without space</div>
+                </div>
+                <div class="border"></div>
+                <div class="p-1 col">
+                    <div id="sentencecounter" class="h3">0</div>
+                    <div class="text-muted">Sentences</div>
+                </div>
+                <div class="border"></div>
+                <div class="p-1 col">
+                    <div class="h3">0</div>
+                    <div class="text-muted">Paragraphs</div>
+                </div>
             </section>  
         </main>
         <footer class="w-100 d-flex justify-content-center mt-auto">
