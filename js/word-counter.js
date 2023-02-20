@@ -8,7 +8,11 @@ $(document).ready(function(){
     if (text.match(/[\s\n][^\s\n]/g) !== null){
       wordCounter = text.match(/[\s\n][^\s\n]/g).length;
     }
-    $('#wordcounter').text(wordCounter+1);
+    if (text){
+      $('#wordcounter').text(wordCounter+1);
+    }else{
+      $('#wordcounter').text(0);
+    }
 
     // Characters
     $('#charcounter').text(text.length);
