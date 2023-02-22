@@ -1,9 +1,16 @@
 $(document).ready(function(){
 
   $('#remove').click(function(){
-    var text = $('#input').val();
-    var emptyRemoved = text.replace('/r\nr\n/g','r\n')
-    $('#input').val(emptyRemoved);
+    let text = $('#input').val();
+    let lines = text.split('\n');
+    let notEmptyLines = [];
+    for (let i = 0; i < lines.length; i++){
+      if (lines[i].trim() !== ''){
+        notEmptyLines.push(lines[i]);
+      }
+    }
+    result = notEmptyLines.join('\n');
+    $('#input').val(result);
   })
 
 });

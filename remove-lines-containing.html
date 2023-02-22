@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="js/remove-empty-lines.js"></script>
-    <title>Remove empty lines</title>
+    <script src="js/remove-lines-containing.js"></script>
+    <title>Remove lines containing</title>
 </head>
 <body class="container d-flex flex-column vh-100">
         <header class="d-flex p-3 mb-auto">
@@ -17,19 +17,26 @@
                 <li class="nav-item"><a href="case-tools.html" class="nav-link text-light">Case tools</a></li>
                 <li class="nav-item"><a href="word-counter.html" class="nav-link text-light">Word counter</a></li>
                 <li class="nav-item"><a href="search-and-replace.html" class="nav-link text-light">Search and replace</a></li>
-                <li class="nav-item"><a href="remove-empty-lines.html" class="nav-link text-dark bg-light active">Remove empty lines</a></li>
-                <li class="nav-item"><a href="remove-lines-containing.html" class="nav-link text-light">Remove lines containing</a></li>
+                <li class="nav-item"><a href="remove-empty-lines.html" class="nav-link text-light">Remove empty lines</a></li>
+                <li class="nav-item"><a href="remove-lines-containing.html" class="nav-link text-dark bg-light active">Remove lines containing</a></li>
             </ul>
         </header>
         <main class="w-75 align-self-center">
             <section class="d-flex justify-content-center text-center text-light mb-5">
-                <h1>Remove empty lines</h1>
+                <h1>Remove lines containing</h1>
             </section>
-            <section class="mb-4">
-                <textarea name="input" id="input" class="form-control bg-light" rows="10"></textarea>
+            <section class="mb-3">
+                <div class="text-light ml-1">
+                    Search lines for:
+                </div>
+                <textarea name="input1" id="input1" class="form-control bg-light" rows="1"></textarea>
             </section>
-            <section class="d-flex justify-content-center">
-                <button type="button" id="remove" class="btn btn-light">Remove empty lines</button>
+            <section class="d-flex justify-content-center mb-3">
+                <button type="button" id="containing" class="btn btn-light mr-3">Remove lines containing</button>
+                <button type="button" id="notcontaining" class="btn btn-light">Remove lines not containing</button>
+            </section>
+            <section>
+                <textarea name="input2" id="input2" class="form-control bg-light" rows="10"></textarea>
             </section>
         </main>
         <footer class="w-100 d-flex justify-content-center mt-auto">
